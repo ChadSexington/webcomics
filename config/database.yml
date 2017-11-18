@@ -1,0 +1,38 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+
+<% user = ENV.key?('MYSQL_ADMIN_PASSWORD') ? 'root' : ENV["MYSQL_USER"] %>
+<% password = ENV.key?('MYSQL_ADMIN_PASSWORD') ? ENV['MYSQL_ADMIN_PASSWORD'] : ENV['MYSQL_PASSWORD'] %>
+<% db_service = ENV.fetch('DATABASE_SERVICE_NAME','').underscore.upcase %>
+
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV["#{db_service}_MAX_CONNECTIONS"] || 5 %>
+  username: <%= user %>
+  password: <%= password %>
+  host: <%= ENV["#{db_service}_SERVICE_HOST"] %>
+  port: <%= ENV["#{db_service}_SERVICE_PORT"] %>
+  database: <%= ENV["MYSQL_DATABASE"] %>
+
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *default
+  #database: blog_production
+  #username: myapp
+  #password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  #host:
+  #port:

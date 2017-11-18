@@ -1,0 +1,24 @@
+# Ignore bundler config
+/.bundle
+
+# Ignore rubymine configuration
+/.idea/*
+
+# Ignore test/dev databases
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+log/
+tmp/
+coverage
+
+# Ignore persisted local OpenShift cluster config
+/openshift/local/cluster/*
+
+# Ignore temporary *.swp files
+*.swp
