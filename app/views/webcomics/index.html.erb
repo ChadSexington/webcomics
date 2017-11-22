@@ -1,7 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Webcomics</h1>
-
+<h1 class="animate">Webcomics</h1>
 <table>
   <thead>
     <tr>
@@ -10,16 +7,10 @@
   </thead>
 
   <tbody>
-    <% @webcomics.each do |webcomic| %>
-      <tr>
-        <td><%= link_to 'Show', webcomic %></td>
-        <td><%= link_to 'Edit', edit_webcomic_path(webcomic) %></td>
-        <td><%= link_to 'Destroy', webcomic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    Nothings here yet!
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Webcomic', new_webcomic_path %>
+<%= link_to 'New Webcomic', new_webcomic_path if user_signed_in? %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= Rails.application.name %></title>
+    <title><%= content_for?(:page_title) ? yield(:page_title) : 'Webcomics' %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,8 +9,8 @@
   </head>
 
   <body class="<%= content_for?(:body_class) ? yield(:body_class) : '' %>">
-  <%= content_for?(:pre_main) ? yield(:pre_main) : '' %>
-  <%= render "layouts/flash" unless local_assigns[:hide_flash] %>
+  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/flash' unless local_assigns[:hide_flash] %>
   <%= yield %>
   <%= content_for?(:javascript) ? yield(:javascript) : '' %>
   </body>

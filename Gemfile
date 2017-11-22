@@ -14,14 +14,19 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+
+# Use boostrap frontend framework
+# https://github.com/twbs/bootstrap-rubygem#a-ruby-on-rails
+gem 'bootstrap', '~> 4.0.0.beta'
+
+# Include some funky CSS animations
+# https://github.com/daneden/animate.css
+gem 'animate-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
