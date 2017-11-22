@@ -1,9 +1,11 @@
 class WebcomicsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_webcomic, only: [:show, :edit, :update, :destroy]
 
   # GET /webcomics
   def index
-    @webcomics = Webcomic.all
+    webcomics = Webcomic.all
+    redirect_to webcomic_path(webcomics.last) unless webcomics.empty?
   end
 
   # GET /webcomics/1

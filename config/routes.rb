@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :webcomics
   get 'welcome/index'
-  root 'welcome#index'
+  root 'webcomics#index'
 end
