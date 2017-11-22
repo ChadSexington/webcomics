@@ -35,6 +35,10 @@ Style/BracesAroundHashParameters:
 Style/EmptyLinesAroundBlockBody:
   Enabled: false
 
+# Allow empty methods on multiple lines
+Style/EmptyMethod:
+  Enabled: false
+
 # Align `when` with `case`.
 Layout/CaseIndentation:
   Enabled: true
