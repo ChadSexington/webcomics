@@ -1,0 +1,13 @@
+<% unless flash.empty? %>
+    <% flash.each do |name, msg| %>
+        <%# TODO: This all assumes we use patternfly, which we probably won't. Need to come up with our own. %>
+        <div class="col-sm-12">
+          <div class="alert alert-<%= flash_message_alert_class(name) %> alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <span class="pficon pficon-<%= flash_message_icon_class(name) %>"></span> <%= msg %>
+          </div>
+        </div>
+    <% end %>
+<% end %>

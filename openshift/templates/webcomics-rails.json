@@ -27,6 +27,8 @@
         "database-user" : "${DATABASE_USER}",
         "database-password" : "${DATABASE_PASSWORD}",
         "database-root-password" : "${DATABASE_ROOT_PASSWORD}",
+        "google-client-id" : "${GOOGLE_CLIENT_ID}",
+        "google-client-secret" : "${GOOGLE_CLIENT_SECRET}",
         "keybase" : "${SECRET_KEY_BASE}"
       }
     },
@@ -94,7 +96,6 @@
             "uri": "${SOURCE_REPOSITORY_URL}",
             "ref": "${SOURCE_REPOSITORY_REF}"
           },
-          "contextDir": "${CONTEXT_DIR}"
         },
         "strategy": {
           "type": "Source",
@@ -247,6 +248,24 @@
                       "secretKeyRef" : {
                         "name" : "${NAME}",
                         "key" : "keybase"
+                      }
+                    }
+                  },
+                  {
+                    "name": "GOOGLE_CLIENT_ID",
+                    "valueFrom": {
+                      "secretKeyRef" : {
+                        "name" : "${NAME}",
+                        "key" : "google-client-id"
+                      }
+                    }
+                  },
+                  {
+                    "name": "GOOGLE_CLIENT_SECRET",
+                    "valueFrom": {
+                      "secretKeyRef" : {
+                        "name" : "${NAME}",
+                        "key" : "google-client-secret"
                       }
                     }
                   },
@@ -497,11 +516,6 @@
       "description": "Set this to a branch name, tag or other ref of your repository if you are not using the default branch."
     },
     {
-      "name": "CONTEXT_DIR",
-      "displayName": "Context Directory",
-      "description": "Set this to the relative path to your project if it is not in the root of your repository."
-    },
-    {
       "name": "APPLICATION_DOMAIN",
       "displayName": "Application Hostname",
       "description": "The exposed hostname that will route to the Rails service, if left blank a value will be defaulted.",
@@ -513,6 +527,18 @@
       "description": "Github trigger secret.  A difficult to guess string encoded as part of the webhook URL.  Not encrypted.",
       "generate": "expression",
       "from": "[a-zA-Z0-9]{40}"
+    },
+    {
+      "name": "GOOGLE_CLIENT_ID",
+      "displayName": "Google Client ID",
+      "description": "Client ID fo Google Oauth2 authentication",
+      "required": true
+    },
+    {
+      "name": "GOOGLE_CLIENT_SECRET",
+      "displayName": "Google Client Secret",
+      "description": "Client Secret fo Google Oauth2 authentication",
+      "required": true
     },
     {
       "name": "SECRET_KEY_BASE",

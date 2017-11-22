@@ -64,6 +64,10 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "webcomics-rails_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+
+  # Configure host for links in email
+  config.action_mailer.default_url_options = { host: ENV.fetch('APPLICATION_DOMAIN','localhost:3000') }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

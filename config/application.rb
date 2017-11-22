@@ -14,5 +14,10 @@ module RailsEx
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # Google Oauth configuration
+    config.google_client_id = ENV.fetch('GOOGLE_CLIENT_ID', '')
+    config.google_client_secret = ENV.fetch('GOOGLE_CLIENT_SECRET', '')
+
   end
 end
