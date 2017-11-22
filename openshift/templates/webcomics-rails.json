@@ -95,7 +95,7 @@
           "git": {
             "uri": "${SOURCE_REPOSITORY_URL}",
             "ref": "${SOURCE_REPOSITORY_REF}"
-          },
+          }
         },
         "strategy": {
           "type": "Source",
@@ -113,6 +113,15 @@
               {
                 "name": "RAILS_ENV",
                 "value": "RAILS_ENV"
+              },
+              {
+                "name": "SECRET_KEY_BASE",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "name": "${NAME}",
+                    "key": "keybase"
+                  }
+                }
               }
             ]
           }
