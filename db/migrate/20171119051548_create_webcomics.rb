@@ -7,7 +7,6 @@ class CreateWebcomics < ActiveRecord::Migration[5.1]
       t.integer :width
       t.integer :height
       t.date :creation_date
-      t.datetime :uploaded_at, null: false
       t.timestamps
     end
   end

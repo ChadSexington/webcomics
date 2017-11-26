@@ -56,6 +56,7 @@ class WebcomicsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def webcomic_params
-    params.fetch(:webcomic, {})
+    params.fetch(:webcomic, {}).permit(:title, :author, :comic_image, :creation_date,
+                                       :height, :width, :medium)
   end
 end

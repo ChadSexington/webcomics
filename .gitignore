@@ -23,3 +23,6 @@ coverage
 
 # Ignore temporary *.swp files
 *.swp
+
+# Ignore local file uploads
+/public/uploads

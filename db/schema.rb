@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20171122143922) do
     t.integer "width"
     t.integer "height"
     t.date "creation_date"
-    t.datetime "uploaded_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "comic_image"

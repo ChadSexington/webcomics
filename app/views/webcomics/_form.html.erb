@@ -11,7 +11,34 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group" %>
+    <%= form.label 'Title'  %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
+
+  <div class="form-group" %>
+    <%= form.label 'Author'  %>
+    <%= form.text_field :author, class: 'form-control' %>
+  </div>
+
+  <div class="form-group" %>
+    <%= form.label 'Medium'  %>
+    <%= form.text_field :medium, class: 'form-control' %>
+  </div>
+
+  <div class="form-group" %>
+    <%= form.label 'Creation Date'  %>
+    <%= form.date_field :creation_date, value: Date.today.to_s, class: 'form-control' %>
+  </div>
+
+  <div class="form-group" %>
+    <%= form.label 'Upload file'  %>
+    <%= form.file_field :comic_image, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Webcomic', class: 'btn btn-primary' %>
+    <%= link_to 'Back', webcomics_path, class: 'btn btn-secondary' %>
+  </div>
+
 <% end %>

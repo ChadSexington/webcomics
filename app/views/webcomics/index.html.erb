@@ -1,11 +1,9 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-sm-auto">
-      <h1 class="animated swing">Nothings here yet!</h1>
-    </div>
+<div class="row mt-5 justify-content-center">
+  <div class="col-sm-auto">
+    <h1 class="animated swing">Nothings here yet!</h1>
   </div>
 </div>
 
 <br>
 
-<%= link_to 'New Webcomic', new_webcomic_path if user_signed_in? %>
+<%= link_to 'New Webcomic', new_webcomic_path, class: 'btn btn-primary' if user_signed_in? %>

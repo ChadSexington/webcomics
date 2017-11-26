@@ -1,4 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="row mt-5 justify-content-center">
+  <div class="col-sm-auto">
+    <h2><%= @webcomic.title.capitalize %></h2>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_webcomic_path(@webcomic) %> |
-<%= link_to 'Back', webcomics_path %>
+<div class="row mt-5 justify-content-center">
+  <div class="col-sm-auto">
+    <%= image_tag @webcomic.comic_image.url %>
+  </div>
+</div>
+
+<%= link_to 'New Webcomic', new_webcomic_path, class: 'btn btn-primary' if user_signed_in? %>
+<%= link_to 'Edit', edit_webcomic_path(@webcomic), class: 'btn btn-primary' if user_signed_in? %>

@@ -9,7 +9,6 @@
 #  width         :integer
 #  height        :integer
 #  creation_date :date
-#  uploaded_at   :datetime         not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  comic_image   :string
