@@ -96,6 +96,9 @@ group :development do
 
   # Use rubocop to keep shit clean
   gem 'rubocop'
+
+  # Annotate models automatically
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

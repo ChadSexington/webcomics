@@ -42,6 +42,9 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     animate-rails (1.0.10)
       rails
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (8.0.0)
     ast (2.3.0)
     autoprefixer-rails (7.1.6)
@@ -276,6 +279,7 @@ PLATFORMS
 
 DEPENDENCIES
   animate-rails
+  annotate
   bootstrap (~> 4.0.0.beta)
   capybara (~> 2.13)
   carrierwave (~> 1.0)
