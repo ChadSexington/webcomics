@@ -10,5 +10,15 @@
   </div>
 </div>
 
+<div class="row mt-5 justify-content-center">
+  <div class="col-sm-auto">
+    <%= link_to 'First', webcomic_path(Webcomic.first) %> |
+    <%= link_to 'Back', '#' %> |
+    <%= link_to 'Random', random_webcomic_path %> |
+    <%= link_to 'Next', '#' %> |
+    <%= link_to 'Latest', webcomic_path(Webcomic.last) %>
+  </div>
+</div>
+
 <%= link_to 'New Webcomic', new_webcomic_path, class: 'btn btn-primary' if user_signed_in? %>
 <%= link_to 'Edit', edit_webcomic_path(@webcomic), class: 'btn btn-primary' if user_signed_in? %>
