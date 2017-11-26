@@ -1,17 +1,17 @@
 <div class="row justify-content-center">
-  <div class="col-sm-auto">
+  <div class="col col-sm-auto">
     <h2><%= @webcomic.title.capitalize %></h2>
   </div>
 </div>
 
-<div class="row mt-5 mb-5 justify-content-center">
-  <div class="col-sm-auto">
+<div class="row mt-5 mb-2 justify-content-center">
+  <div class="col col-sm-auto">
     <%= image_tag @webcomic.comic_image.url %>
   </div>
 </div>
 
 <div class="row justify-content-center">
-  <div class="col-sm-auto">
+  <div class="col col-sm-auto">
     <%= link_to 'First', webcomic_path(Webcomic.first) %> |
     <%= link_to 'Back', '#' %> |
     <%= link_to 'Random', random_webcomic_path %> |
@@ -20,5 +20,9 @@
   </div>
 </div>
 
-<%= link_to 'New Webcomic', new_webcomic_path, class: 'btn btn-primary' if user_signed_in? %>
-<%= link_to 'Edit', edit_webcomic_path(@webcomic), class: 'btn btn-primary' if user_signed_in? %>
+<div class="row mt-5 justify-content-center">
+  <div class="col col-sm-auto">
+    <%= link_to 'New Webcomic', new_webcomic_path, class: 'btn btn-primary' if user_signed_in? %>
+    <%= link_to 'Edit', edit_webcomic_path(@webcomic), class: 'btn btn-primary' if user_signed_in? %>
+  </div>
+</div>
