@@ -1,16 +1,16 @@
-<div class="row mt-5 justify-content-center">
+<div class="row justify-content-center">
   <div class="col-sm-auto">
     <h2><%= @webcomic.title.capitalize %></h2>
   </div>
 </div>
 
-<div class="row mt-5 justify-content-center">
+<div class="row mt-5 mb-5 justify-content-center">
   <div class="col-sm-auto">
     <%= image_tag @webcomic.comic_image.url %>
   </div>
 </div>
 
-<div class="row mt-5 justify-content-center">
+<div class="row justify-content-center">
   <div class="col-sm-auto">
     <%= link_to 'First', webcomic_path(Webcomic.first) %> |
     <%= link_to 'Back', '#' %> |
